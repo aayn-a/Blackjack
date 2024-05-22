@@ -10,14 +10,7 @@ while True:
   os.system('clear')
   cards = [2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,"J","J","J","J","Q","Q","Q","Q","K","K","K","K", "A", "A", "A", "A"]
 
-  # aces can be 1 or 11
-    # if you have [8, 2, A] -> A=11 
-    # if you have [8, 9, A] -> A=1
-    # [A, 5] you will tell them that their sum is 16 or 6 and recalculate if they hit
-    # [A, 5, K]
 
-  # always make Aces 11 unless it makes them bust
-  # if you have [A, A, A], some A's can be 1 and others can 11
 
   player = []
   dealer = []
@@ -36,7 +29,6 @@ while True:
 
   print(player)
 
-  # you only need to modify this function
   def sum(h):
     # sum up the hands
     sumOfPlayer = 0
@@ -45,8 +37,8 @@ while True:
       if h[i] ==  "J" or h[i] ==  "Q" or h[i] ==  "K":
         sumOfPlayer += 10
       elif h[i] == "A":
-        sumOfPlayer += 1 # we need to add the minimum value rof each ace
-        numOfAces += 1 # keeps track of how many aces we have
+        sumOfPlayer += 1 
+        numOfAces += 1 
       else:
         sumOfPlayer += h[i]
     for i in range(numOfAces):
